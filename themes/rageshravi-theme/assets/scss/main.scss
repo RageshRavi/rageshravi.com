@@ -1,0 +1,124 @@
+$color-blue: #727fff;
+$color-black: #000;
+$color-gray: #888888;
+$color-white: #fff;
+$mobile: 320px;
+$desktop: 1024px;
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import 'header.scss';
+@import 'footer.scss';
+@import 'single-post.scss';
+
+
+
+body{
+    // background-color: blue;
+}
+.post-image {
+  display: block;
+	object-fit: cover;
+}
+
+.center {
+  width: 100px;
+}
+
+.label {
+  font-family: 'Quantico';
+  text-align: center;
+}
+
+.card-wrapper {
+  width: 100%;
+  max-width: $desktop;
+  margin: auto;
+  display: grid;
+  grid-auto-flow: row;
+  column-gap: 2px;
+  row-gap: 25px;
+  min-height: 500px;
+  padding-top: 25px;
+
+@media (min-width: 30em) {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (min-width: 60em) {
+  grid-template-columns: repeat(4, 1fr);
+}
+}
+
+.blog-card {
+
+  height: 300px;
+  width: 250px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 3px 1px #e6e6e6;
+
+  .blog-card__thumbnail {
+    height: 125px;
+    width: inherit;
+    object-fit: cover;
+    border-color: #e6e6e6;
+    border-style: solid;
+    border: 1px;
+  }
+
+  .blog-card__details {
+    // height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+
+    background: $color-white;
+    // box-shadow: 0 1px 7px rgba(0,0,0,0.5);
+  }
+
+  .blog-card__title {
+    font-family: 'Open Sans';
+    font-size: 17px;
+    font-style: bold;
+
+    text-transform: uppercase;
+    color: $color-black;
+    display: flex;
+    opacity: 75%;
+
+  }
+
+  .blog-card__description {
+    margin-top: 10px;
+    font-family: 'Open Sans';
+    opacity: 70%;
+    font-size: 8px;
+    color: $color-gray;
+  }
+
+  .blog-card_minutes_read{
+    margin-top: 10px;
+    font-family: "Open Sans";
+    font-size: 10px;
+    color: $color-gray;
+    font-weight: 300;
+    padding-bottom: 2px;
+    opacity: 85%;
+  }
+
+  .blog-card__action {
+    background: transparent;
+    border: none;
+    font-family: 'Quantico';
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+    color: $color-gray;
+    cursor: pointer;
+  }
+
+  .blog-card:hover{
+    cursor: pointer;
+  }
+}

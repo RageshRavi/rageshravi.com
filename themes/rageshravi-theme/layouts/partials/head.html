@@ -1,0 +1,17 @@
+<head>
+  <title>{{ with .Title }}{{ humanize . }} | {{ end }}{{ .Site.Title }}</title>
+  <meta charset='utf-8'>
+  {{ hugo.Generator }}
+  {{- with .Site.Params.ga_verify }}
+  <meta name="google-site-verification" content="{{ . }}" />
+  {{- end }}
+  <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+  <meta http-equiv = 'X-UA-Compatible' content = 'IE=edge'>
+  <meta name = 'SKYPE_TOOLBAR' content = 'SKYPE_TOOLBAR_PARSER_COMPATIBLE' />
+  <link rel='canonical' href='{{ .Permalink }}'>
+  {{- $options := (dict "targetPath" "css/main.css" "outputStyle" "expanded" "enableSourceMap" "true") -}}
+  {{- $styles := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "scss/main.scss" . | resources.ToCSS $options | resources.Fingerprint "sha512" }}
+  <link rel = 'stylesheet' href = '{{ $styles.Permalink }}' integrity = '{{ $styles.Data.Integrity }}'>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>

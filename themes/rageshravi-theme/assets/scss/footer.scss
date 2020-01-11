@@ -1,0 +1,18 @@
+.footer{
+  box-shadow: 1px 1px 2px 1px #e6e6e6;
+  padding:0;
+  // color:$light;
+  margin:0;
+  // background: $dark;
+  width:100%;
+  font-size: 1.05rem;
+  min-height:100px;
+  &_inner{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    @media screen and (max-width: 567px) {
+      flex-direction: column;
+    }
+  }
+}

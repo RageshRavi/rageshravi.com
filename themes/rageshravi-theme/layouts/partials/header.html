@@ -1,0 +1,10 @@
+<header>
+  <div class="header">
+  <a href= "{{ .Site.BaseURL }}" class="logo">RAGESHRAVI.COM</a>
+  <div class="header-right">
+    {{ range .Site.Data.menu }}
+      <a href = "">{{ .item }}</a>
+    {{ end }}
+  </div>
+</div>
+</header>

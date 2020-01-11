@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+/* Style the header with a grey background and some padding */
+.header {
+  padding-left: 10%;
+  padding-right: 10%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 2px 1px #e6e6e6;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: #888888;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: dodgerblue;
+  color: black;
+  cursor: hand;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+  cursor: hand;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+    cursor: hand;
+  }
+  .header-right {
+    float: none;
+  }
+}
+
+.footer {
+  box-shadow: 1px 1px 2px 1px #e6e6e6;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-size: 1.05rem;
+  min-height: 100px;
+}
+
+.footer_inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+@media screen and (max-width: 567px) {
+  .footer_inner {
+    flex-direction: column;
+  }
+}
+
+.column-layout {
+  width: 75%;
+  height: auto;
+  margin: auto;
+}
+
+@media (min-width: 700px) {
+  .column-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 600px) {
+  .column-layout {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .column-layout {
+    max-width: 75%;
+  }
+}
+
+.main-column {
+  flex-basis: 70%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+.main-column_read_time {
+  margin-top: 10px;
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+  color: #888888;
+  font-weight: 300;
+  padding-bottom: 2px;
+  opacity: 50%;
+  margin-bottom: 25px;
+}
+
+.main-column__img-container {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  background-color: #f4f4f4;
+}
+
+.main-column__img-container::before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 53.33334%;
+}
+
+.main-column_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 10;
+  right: 0;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
+}
+
+@media (min-width: 1300px) {
+  .main-column_image {
+    max-height: 1100px;
+  }
+}
+
+.main-column_title {
+  position: relative;
+  text-align: center;
+  color: grey;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.main-column_article {
+  position: relative;
+  text-align: left;
+  margin-top: 50px;
+  color: grey;
+}
+
+.sidebar {
+  flex-basis: 25%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: 150px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.sidebar-section {
+  display: grid;
+  grid-auto-rows: auto;
+  border: 1px;
+  border-style: solid;
+  border-color: #e6e6e6;
+  justify-content: center;
+}
+
+@media (min-width: 1000px) {
+  .column-layout {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.post-image {
+  display: block;
+  object-fit: cover;
+}
+
+.center {
+  width: 100px;
+}
+
+.label {
+  font-family: 'Quantico';
+  text-align: center;
+}
+
+.card-wrapper {
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+  display: grid;
+  grid-auto-flow: row;
+  column-gap: 2px;
+  row-gap: 25px;
+  min-height: 500px;
+  padding-top: 25px;
+}
+
+@media (min-width: 30em) {
+  .card-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 60em) {
+  .card-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.blog-card {
+  height: 300px;
+  width: 250px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 3px 1px #e6e6e6;
+}
+
+.blog-card .blog-card__thumbnail {
+  height: 125px;
+  width: inherit;
+  object-fit: cover;
+  border-color: #e6e6e6;
+  border-style: solid;
+  border: 1px;
+}
+
+.blog-card .blog-card__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background: #fff;
+}
+
+.blog-card .blog-card__title {
+  font-family: 'Open Sans';
+  font-size: 17px;
+  font-style: bold;
+  text-transform: uppercase;
+  color: #000;
+  display: flex;
+  opacity: 75%;
+}
+
+.blog-card .blog-card__description {
+  margin-top: 10px;
+  font-family: 'Open Sans';
+  opacity: 70%;
+  font-size: 8px;
+  color: #888888;
+}
+
+.blog-card .blog-card_minutes_read {
+  margin-top: 10px;
+  font-family: "Open Sans";
+  font-size: 10px;
+  color: #888888;
+  font-weight: 300;
+  padding-bottom: 2px;
+  opacity: 85%;
+}
+
+.blog-card .blog-card__action {
+  background: transparent;
+  border: none;
+  font-family: 'Quantico';
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: left;
+  color: #888888;
+  cursor: pointer;
+}
+
+.blog-card .blog-card:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=main.css.map */

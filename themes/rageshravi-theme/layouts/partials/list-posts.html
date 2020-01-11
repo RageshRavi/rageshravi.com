@@ -1,0 +1,37 @@
+
+  {{- $pages := .Pages -}}
+  {{  if .IsHome }}
+  {{ $pages = (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+  {{  end }}
+  {{ $paginator := .Paginate $pages.ByPublishDate.Reverse }}
+
+    <div class="card-wrapper">
+      {{- range $paginator.Pages }}
+        {{ $scratch := newScratch }}
+          {{ if isset .Params "image" }}
+            {{ $scratch.Set "image" .Params.image }}
+          {{ else }}
+            {{ $scratch.Set "image" "thumbnail.svg" }}
+          {{ end }}
+          {{ $image := $scratch.Get "image" }}
+          {{ $bg := (path.Join "images" $image | absLangURL) }}
+      <div class="blog-card">
+        <!-- <div class="blog-card__thumbnail"> -->
+          <img  class="blog-card__thumbnail" src= {{$bg}}>
+        <!-- </div> -->
+
+        <div class="blog-card__details">
+          <div class="blog-card__title">
+            <a class="blog-card__title" href='{{ .RelPermalink }}'>{{ .Title }}</a>
+          </div>
+
+          <div class="blog-card__description">
+            {{ .Summary | truncate 350}}
+          </div>
+          <div class="blog-card_minutes_read">
+            {{ math.Round (div (countwords .Content) 220.0) }} min read
+            </div>
+        </div>
+      </div>
+      {{- end }}
+      </div>
