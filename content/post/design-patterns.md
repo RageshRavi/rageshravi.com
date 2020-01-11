@@ -2,8 +2,8 @@
 author: "Ragesh R"
 date: 2019-08-18
 title: Design Patterns
-image: 'design-patterns.jpg'
-draft: true
+image: 'IMG_0550 2.JPG'
+draft: false
 ---
 ## Design Patterns
 
