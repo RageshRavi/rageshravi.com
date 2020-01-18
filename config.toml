@@ -9,3 +9,4 @@ paginate = 30
 # comment on delete the following lines 11 ~ 13
 pygmentsCodefences = true
 pygmentsCodefencesGuessSyntax = true
+googleAnalytics = "UA-90855426-1"
