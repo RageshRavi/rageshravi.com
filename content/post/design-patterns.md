@@ -1,6 +1,6 @@
 ---
 author: "Ragesh R"
-date: 2019-08-18
+ByPublishDate: 2019-08-18
 title: Design Patterns
 image: 'IMG_0550 2.JPG'
 draft: false
@@ -42,7 +42,7 @@ Five well-known design patterns that are parts of creational patterns are the
  4. Prototype pattern
  5. [Singleton pattern](singleton-pattern)
 
- ## Structural Design Pattern
+ **Structural Design Pattern**
 
   1. Adapter pattern
   2. Bridge pattern
@@ -52,7 +52,7 @@ Five well-known design patterns that are parts of creational patterns are the
   6. Flyweight pattern
   7. Proxy pattern
 
- ## Behavioural Design Pattern
+ **Behavioural Design Pattern**
 
    1. Chain of responsibility
    2. Command
@@ -65,7 +65,7 @@ Five well-known design patterns that are parts of creational patterns are the
    9. Template method
    10. Visitor
 
- ## Concurrency Design Pattern
+ **Concurrency Design Pattern**
 
    1. Signaling
    2. Rendezvous

@@ -22,14 +22,18 @@
 
         <div class="blog-card__details">
           <div class="blog-card__title">
-            <a class="blog-card__title" href='{{ .RelPermalink }}'>{{ .Title }}</a>
+              <a class="blog-card__title" href='{{ .RelPermalink }}'>{{ .Title | truncate 40}}</a>
           </div>
 
           <div class="blog-card__description">
-            {{ .Summary | truncate 350}}
+              {{ if gt (len .Title) 20}}
+              {{ .Summary | truncate 400 }}
+              {{ else }}
+              {{ .Summary | truncate 1000 }}
+              {{ end }}
           </div>
           <div class="blog-card_minutes_read">
-            {{ math.Round (div (countwords .Content) 220.0) }} min read
+              {{ math.Round (div (countwords .Content) 200.0) }} min read
             </div>
         </div>
       </div>

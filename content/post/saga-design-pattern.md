@@ -1,6 +1,6 @@
 ---
 author: "Ragesh R"
-date: 2019-08-18
+ByPublishDate: 2019-08-18
 title: Saga Design Patter
 image: 'IMG_0562.jpg'
 draft: false

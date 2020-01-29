@@ -5,4 +5,4 @@ title: Abstract Factory Pattern
 image: 'design-patterns.jpg'
 draft: true
 ---
-## Abstract Design Pattern
+**Abstract Design Pattern**
